@@ -34,38 +34,29 @@
     }
     #map{width: 100%; height: 600px; float: left;}
 
-    .legend {
-            line-height: 18px;
-            color: #000;
-            background-color: #ffffff;
-        }
-    .legend i {
-        width: 18px;
-        height: 18px;
-        float: left;
-        margin-right: 8px;
-        opacity: 0.7; 
-    }
     </style>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>terminal emulation</title>
+    <title>terminal_emulation</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="">
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+
 </head>
 
 <body>
     <div id="map"></div>
+    <script src="tePoints.js"></script>
 <script>
-    var map = L.map('map').setView([30, 15], 2);
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 5,
+    var map = L.map('map').setView([44.16, -72.65], 13);
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 17,
+        minZoom: 4.5,
         attribution: '© OpenStreetMap'
         }).addTo(map);
 </script>
-
+    <script src="pointCode.js"></script>
 </body>
 
 </html>
