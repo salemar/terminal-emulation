@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: rgb(147, 84, 205);
+        }
+
+        #text {
+            width: 300px;
+            position: fixed;
+            right: 70px
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(0, 245, 164);
+            right: 70px;
+        }
+
+        h2 {
+            top: 25%;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(161, 240, 214);
+            right: 70px;
+        }
+
+        h3 {
+            color: rgb(199, 253, 235);
+            font-family: monospace;
+            position: relative;
+            top: 20px;
+            text-align: right
+        }
+
+        a {
+            cursor: cell;
+            position: relative;
+            text-align: center;
+            top: 25%;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(161, 240, 214);
+        }
+
+        #map {
+            width: 50%;
+            height: 300px;
+            margin: 45%;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wake_up</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="tePoints.js"></script>
+    <script src="countries.js"></script>
+    <script>
+        var map = L.map('map', {
+            maxBounds: [[-85, -180.0],[85, 180.0]],
+            minZoom: 3,
+            maxZoom: 17,
+        })
+        .setView([0, 0], 3);
+
+        var poly = L.geoJSON(countries, {
+            pointToLayer: function (feature, latlng){}
+        })
+            .addTo(map);
+
+        var geojsonMarkerOptions = ({
+            radius: 6,
+            fillColor: "#b22222",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        });
+
+        var newIcon = L.geoJSON(newPoints, {
+            pointToLayer: function (feature, latlng) {
+                console.log(feature)
+                return L.circleMarker(latlng, geojsonMarkerOptions).bindPopup(feature.properties.Note + " " + feature.properties.Date);
+            }
+        }).addTo(map);
+
+    </script>
+</body>
+
+</html>

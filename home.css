@@ -1,0 +1,142 @@
+/* @import url("https://fonts.googleapis.com/css?family=Roboto"); */
+
+body {
+  background: rgb(147, 84, 205);
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font-family: "Calisto MT", sans-serif;
+  font-size: 12;
+}
+
+/* footer {
+  background: #666;
+  text-align: center;
+  line-height: 1.5em;
+  padding: 2.5em 0;
+  color: #fff;
+} */
+
+h1 {
+  color: #666;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
+.paper {
+  width: 25em;
+  height: 15em;
+  position: absolute;
+  display: block;
+  top: 2em;
+  left: 2.5em;
+  background: #fff;
+  -webkit-transition: 1.5s ease-in-out;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+  z-index: 1;
+  text-align: center;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.back {
+  display: block;
+  position: relative;
+  background: #bbbbbb;
+  top: 0;
+  height: 0;
+  width: 30em;
+  height: 17em;
+  content: "";
+  -webkit-transition: 1.5s ease-in-out;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+  -webkit-box-shadow: 0 0 1em rgba(68, 68, 136, 0.15);
+  box-shadow: 0 0 1em rgba(68, 68, 136, 0.15);
+  z-index: 0;
+}
+
+.container {
+  margin: 0 auto 0 auto;
+  padding: 10em 1em 1em 1em;
+  width: 30em;
+  height: 20em;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  z-index: 0;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
+.container .cover {
+  position: absolute;
+  top: 0em;
+  left: 50%;
+  height: 1em;
+  display: block;
+  -webkit-transform: translate(-50%, 0%) scaleY(1);
+  transform: translate(-50%, 0%) scaleY(1);
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  margin: 0 auto;
+  border: 15em solid transparent;
+  border-top: 10em solid white;
+  -webkit-transition: all 1.5s ease-in-out;
+  -webkit-transition: z-index 1.5s ease-in-out, border-top 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out;
+  transition: z-index 1.5s ease-in-out, border-top 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out;
+  transition: z-index 1.5s ease-in-out, transform 1.5s ease-in-out,
+    border-top 1.5s ease-in-out;
+  transition: z-index 1.5s ease-in-out, transform 1.5s ease-in-out,
+    border-top 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out;
+  -webkit-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+  z-index: 30;
+}
+
+.container:hover .back {
+  top: 10em;
+  z-index: 0;
+}
+
+.container:hover .back .paper {
+  top: -15em;
+  z-index: 45;
+  height: 30em;
+  -webkit-transition: z-index 1.5s ease-in-out, top 1.5s ease-in-out,
+    height 1.5s ease-in-out;
+  transition: z-index 1.5s ease-in-out, top 1.5s ease-in-out,
+    height 1.5s ease-in-out;
+  -webkit-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+}
+
+.container:hover .cover {
+  border-top: 10em solid #eee;
+  -webkit-transform: translate(-50%, -100%) scaleY(-1);
+  transform: translate(-50%, -100%) scaleY(-1);
+  z-index: 0;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.container .bottom {
+  width: 0;
+  margin: 0 auto;
+  position: relative;
+  top: 0em;
+  display: block;
+  border-left: 15em solid #eee;
+  border-right: 15em solid #eee;
+  border-bottom: 7em solid #eee;
+  border-top: 10em solid transparent;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+  z-index: 100;
+}
+
+/*# sourceMappingURL=home.css.map */
