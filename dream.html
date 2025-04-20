@@ -65,26 +65,28 @@
 
 <body>
     <div id="map"></div>
-    <script src="tePoints.js"></script>
+    <script src="dreamPoints.js"></script>
     <script src="countries.js"></script>
     <script>
         var map = L.map('map', {
             maxBounds: [[-85, -180.0],[85, 180.0]],
             minZoom: 3,
-            maxZoom: 17,
+            maxZoom: 3,
         })
         .setView([0, 0], 3);
 
         var poly = L.geoJSON(countries, {
+            fillColor: "#66666",
+            weight: 0,
             pointToLayer: function (feature, latlng){}
         })
             .addTo(map);
 
         var geojsonMarkerOptions = ({
-            radius: 6,
-            fillColor: "#b22222",
+            radius: 7,
+            fillColor: "#111111",
             color: "#000",
-            weight: 1,
+            weight: 0,
             opacity: 1,
             fillOpacity: 0.8
         });
@@ -92,7 +94,7 @@
         var newIcon = L.geoJSON(newPoints, {
             pointToLayer: function (feature, latlng) {
                 console.log(feature)
-                return L.circleMarker(latlng, geojsonMarkerOptions).bindPopup(feature.properties.Note + " " + feature.properties.Date);
+                return L.circleMarker(latlng, geojsonMarkerOptions).bindPopup(feature.properties.Note);
             }
         }).addTo(map);
 

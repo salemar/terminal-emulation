@@ -92,7 +92,7 @@
         var icon = L.geoJSON(points, {
             pointToLayer: function (feature, latlng) {
                 console.log(feature)
-                return L.circleMarker(latlng, geojsonMarkerOptions).bindPopup(feature.id + ": " + feature.properties.Note + " " + feature.properties.Date);
+                return L.circleMarker(latlng, geojsonMarkerOptions).bindPopup(feature.properties.Note + "<br>" + feature.properties.Date);
             }
         }).addTo(map);
 
